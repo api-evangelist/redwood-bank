@@ -30,8 +30,35 @@ tags:
 created: '2026-07-23'
 modified: '2026-07-23'
 specificationVersion: '0.19'
-apis: []
+apis:
+- name: Redwood Bank Website Member Authentication (Umbraco Delivery API)
+  description: >-
+    The OpenID Connect member-authentication surface (OpenIddict) behind the
+    Umbraco headless-CMS "Content Delivery API" that powers redwoodbank.co.uk.
+    This is the only live, machine-readable API surface published on the domain;
+    it authenticates website members / gated content and is NOT an Open Banking
+    or banking-product API. Discovered via the live
+    /.well-known/openid-configuration and JWKS documents.
+  humanURL: https://www.redwoodbank.co.uk/
+  baseURL: https://redwoodbank.co.uk/umbraco/delivery/api/v1/
+  properties:
+  - type: OpenIDConnect
+    url: https://www.redwoodbank.co.uk/.well-known/openid-configuration
+  - type: Authentication
+    url: authentication/redwood-bank-authentication.yml
+  - type: WellKnown
+    url: well-known/redwood-bank-well-known.yml
+  - type: Conformance
+    url: conformance/redwood-bank-conformance.yml
 common:
+- type: DomainSecurity
+  url: security/redwood-bank-domain-security.yml
+- type: WellKnown
+  url: well-known/redwood-bank-well-known.yml
+- type: Authentication
+  url: authentication/redwood-bank-authentication.yml
+- type: Conformance
+  url: conformance/redwood-bank-conformance.yml
 - type: Website
   url: https://www.redwoodbank.co.uk/
 - type: Blog

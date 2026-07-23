@@ -1,0 +1,35 @@
+generated: '2026-07-23'
+method: derived
+source: well-known/redwood-bank-openid-configuration.json
+note: >-
+  Standards derived from the live OpenID Connect discovery document. Scope is the
+  Umbraco headless-CMS member-authentication surface only; Redwood Bank publishes
+  no Open Banking (OBIE Read/Write / PSD2) API, so those regimes do not apply and
+  are not asserted.
+standards:
+- id: openid-connect-discovery
+  conforms: true
+  evidence: valid /.well-known/openid-configuration served as application/json
+- id: oauth2
+  conforms: true
+  evidence: >-
+    authorization_code and client_credentials grants with authorization/token
+    endpoints advertised in discovery document
+- id: rfc7636-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256 and plain
+- id: rfc7517-jwks
+  conforms: true
+  evidence: /.well-known/jwks returns an RS256 RSA signing key set
+- id: rfc7009-token-revocation
+  conforms: true
+  evidence: revocation_endpoint advertised
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returned 404
+- id: obie-open-banking
+  conforms: false
+  evidence: no OBIE Read/Write (AIS/PIS/CBPII) or Open Data API published
+- id: psd2
+  conforms: false
+  evidence: deposit/lending-only product range falls outside PSD2 payment scope

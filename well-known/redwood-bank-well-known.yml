@@ -1,0 +1,32 @@
+generated: '2026-07-23'
+method: searched
+source: https://www.redwoodbank.co.uk/.well-known/
+host: https://redwoodbank.co.uk
+note: >-
+  The only machine-readable discovery surface Redwood Bank publishes is the
+  OpenIddict/Umbraco headless-CMS "Content Delivery API" member-authentication
+  layer that backs the marketing website (redwoodbank.co.uk). It is a standard
+  OIDC provider, NOT an Open Banking / banking-product API. The Delivery API
+  content endpoints (/umbraco/delivery/api/v*/content) return the site HTML
+  shell (disabled), and no /openapi.json, /swagger.json, or security.txt exists.
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  content_type: application/json
+  file: redwood-bank-openid-configuration.json
+  standard: OpenID Connect Discovery 1.0
+- path: /.well-known/jwks
+  status: 200
+  content_type: application/json
+  file: redwood-bank-jwks.json
+  standard: RFC 7517 JSON Web Key Set
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /openapi.json
+  status: 404
+- path: /llms.txt
+  status: 404
