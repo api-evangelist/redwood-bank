@@ -1,0 +1,102 @@
+aid: redwood-bank
+name: Redwood Bank
+review:
+  question: Does Redwood Bank publish a public developer portal or UK Open Banking (OBIE) API surface?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Redwood Bank is a specialist UK challenger bank for SMEs (FCA/PRA firm
+    reference 755924, company number 09872265, Letchworth Garden City),
+    wholly owned by Redwood Financial Partners Ltd. Its product range is
+    deposit- and lending-only: business and charity savings accounts and
+    individually underwritten commercial / buy-to-let mortgages. It does not
+    offer a payment or business current account, and it is not one of the
+    CMA9 mandated banks. Because it holds no online payment accounts, it
+    falls outside the PSD2 scope that compels UK Open Banking, and no public
+    developer portal, OBIE Read/Write API, or Open Banking Open Data endpoint
+    could be found or confirmed. This profile is therefore identity-only with
+    an empty apis[] block; no bank-proprietary or standard OpenAPI was
+    harvested because none is exposed by this bank.
+  developerPortal:
+    found: false
+    note: |
+      No developer/Open Banking portal exists. The candidate hosts
+      developer.redwoodbank.co.uk, api.redwoodbank.co.uk, and
+      openbanking.redwoodbank.co.uk do not resolve (connection failed / no DNS).
+  openData:
+    confirmed: false
+    baseURL: ""
+    note: |
+      No Open Banking Open Data endpoint was confirmed. The OBIE-standard
+      reference-data paths /open-banking/v2.3/atms and /open-banking/v3.1/atms
+      on redwoodbank.co.uk, plus /.well-known/open-banking, all return HTTP 404.
+      No alternative Open Data host is published, so none was invented.
+  readWrite:
+    documented: false
+    authModel: |
+      Not applicable — Redwood Bank documents no OBIE Read/Write APIs. Were it
+      an obligated ASPSP, the UK standard would require FAPI-grade OAuth2/OIDC
+      authorization, mutual-TLS client authentication, PSD2 strong customer
+      authentication (SCA), and OBIE/eIDAS certificates for AIS, PIS, and CBPII.
+    specProvenance: |
+      No spec harvested. The shared UK standards (not a Redwood contract) live at
+      github.com/OpenBankingUK/read-write-api-specs (Read/Write) and
+      github.com/OpenBankingUK/opendata-api-specs (Open Data).
+  transports:
+  - protocol: REST
+    scheme: https
+    documented: false
+    note: No public REST API is documented by Redwood Bank.
+  probes:
+  - url: https://developer.redwoodbank.co.uk/
+    status: 000
+    note: Host does not resolve / connection failed.
+  - url: https://api.redwoodbank.co.uk/
+    status: 000
+    note: Host does not resolve / connection failed.
+  - url: https://openbanking.redwoodbank.co.uk/
+    status: 000
+    note: Host does not resolve / connection failed.
+  - url: https://redwoodbank.co.uk/open-banking/v3.1/atms
+    status: 404
+    note: OBIE-standard Open Data ATMs path — not served.
+  - url: https://redwoodbank.co.uk/open-banking/v2.3/atms
+    status: 404
+    note: OBIE-standard Open Data ATMs path — not served.
+  - url: https://redwoodbank.co.uk/.well-known/open-banking
+    status: 404
+    note: Open Banking well-known discovery — not served.
+  - url: https://www.redwoodbank.co.uk/
+    status: 200
+    note: Corporate marketing site (savings + commercial mortgages).
+  - url: https://redwoodbank.co.uk/legal
+    status: 200
+    note: Regulatory statement confirming FCA/PRA firm reference 755924.
+sources:
+- url: https://www.redwoodbank.co.uk/
+  type: Website
+  note: Navigation covers Savings, Commercial Mortgages, Intermediaries, News, Contact — no API/developer/Open Banking entry.
+- url: https://redwoodbank.co.uk/legal
+  type: Legal
+  note: FCA firm reference 755924, company number 09872265, authorised by the PRA and regulated by the FCA and PRA.
+- url: https://www.openbankingtracker.com/provider/redwood-credit-union-digital-banking
+  type: Reference
+  note: Open Banking Tracker lists no API products for Redwood; access is only via third-party aggregators.
+- url: https://www.fintechfutures.com/793872/uk-challenger-redwood-gets-banking-licence/
+  type: Reference
+  note: 2017 banking-licence grant; ownership by Redwood Financial Partners (Rowland family) with Warrington Borough Council stake.
+- url: https://github.com/OpenBankingUK/read-write-api-specs
+  type: Reference
+  note: Shared OBIE Read/Write standard (AIS/PIS/CBPII) — the standard an obligated ASPSP would conform to, not a Redwood contract.
+- url: https://github.com/OpenBankingUK/opendata-api-specs
+  type: Reference
+  note: Shared OBIE Open Data standard (ATMs/Branches/Products) — reference only; Redwood publishes no such endpoint.
+actions:
+  apisYmlUpdated: true
+  openapiHarvested: false
+  reason: |
+    Identity-only bootstrap. Redwood Bank exposes no public API surface, so
+    apis[] is empty and no OpenAPI (proprietary or OBIE-standard) was saved.
+    All non-fabricated common[] links point to pages verified at HTTP 200.

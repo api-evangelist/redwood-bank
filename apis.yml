@@ -1,0 +1,51 @@
+aid: redwood-bank
+url: https://raw.githubusercontent.com/api-evangelist/redwood-bank/refs/heads/main/apis.yml
+name: Redwood Bank
+kind: company
+description: Redwood Bank is a specialist UK challenger bank for small and medium-sized
+  businesses, headquartered in Letchworth Garden City, Hertfordshire. Launched in 2017
+  after receiving its banking licence from the Prudential Regulation Authority and
+  Financial Conduct Authority (Financial Services Register firm reference 755924,
+  company number 09872265), it is wholly owned by Redwood Financial Partners Ltd — a
+  vehicle controlled by Jonathan and David Rowland, with Warrington Borough Council
+  holding a roughly one-third stake. Redwood focuses narrowly on business and charity
+  savings accounts and individually underwritten commercial and buy-to-let mortgages,
+  and is not one of the CMA9 mandated banks. Because its product range is deposit-
+  and lending-only (it does not offer a payment / business current account), it falls
+  outside the PSD2 scope that compels UK Open Banking, and as of this review it
+  publishes no public developer portal, no OBIE Read/Write (AIS/PIS/CBPII) APIs, and
+  no confirmed Open Banking Open Data endpoint.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- Business Banking
+- SME
+- Savings
+- Commercial Mortgages
+- Open Banking
+- PSD2
+- OBIE
+- United Kingdom
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://www.redwoodbank.co.uk/
+- type: Blog
+  url: https://redwoodbank.co.uk/news
+- type: Support
+  url: https://redwoodbank.co.uk/contact-us/support
+- type: TermsOfService
+  url: https://redwoodbank.co.uk/legal/website-terms
+- type: PrivacyPolicy
+  url: https://redwoodbank.co.uk/legal/privacy
+- type: Legal
+  url: https://redwoodbank.co.uk/legal
+- type: LinkedIn
+  url: https://www.linkedin.com/company/redwoodbank/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
