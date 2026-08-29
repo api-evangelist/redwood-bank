@@ -15,6 +15,17 @@ description: Redwood Bank is a specialist UK challenger bank for small and mediu
   outside the PSD2 scope that compels UK Open Banking, and as of this review it
   publishes no public developer portal, no OBIE Read/Write (AIS/PIS/CBPII) APIs, and
   no confirmed Open Banking Open Data endpoint.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Financial-Services
