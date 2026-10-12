@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/redwood-bank/integrations
+- https://n8n.io/integrations/redwood-bank/
+- https://composio.dev/toolkits/redwood-bank
+- https://monid.ai/tools/redwood-bank
+checked:
+- https://composio.dev/toolkits/redwood-bank
+- https://monid.ai/tools/redwood-bank
+- https://n8n.io/integrations/redwood-bank/
+- https://zapier.com/apps/redwood-bank/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
